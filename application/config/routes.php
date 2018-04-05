@@ -1,0 +1,28 @@
+<?php
+
+return[
+  ''=>[
+      'controller'=>'main',
+      'action'=>'index',
+    ],  
+  'login'=>[
+      'controller'=>'account',
+      'action'=>'login',
+    ],
+    'singup'=>[
+        'controller'=>'account',
+        'action'=>'register',
+    ],
+    'weather'=>[
+      'controller'=>'weather',
+      'action'=>'weatherview',
+    ],
+    'contact'=>[
+      'controller'=>'feedback',
+      'action'=>'sendfeedback',
+    ],
+    'feedbackview'=>[
+      'controller'=>'feedback',
+      'action'=>'showfeedback',
+    ],
+];

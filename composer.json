@@ -1,0 +1,9 @@
+{
+    "name": "ruma/bwt",
+    "description": "smth",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}

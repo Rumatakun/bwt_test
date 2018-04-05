@@ -1,0 +1,17 @@
+.input.error .field{
+    border:1px solid red;
+}
+.input.error .message{
+    color:red;
+}
+.input.success .field{
+    border:1px solid green;
+}
+.input.success .message{
+    color:green;
+}
+
+/*input:required:valid {*/
+    /*border-color: green;*/
+    /*border-width: 3px;*/
+/*}*/
