@@ -13,7 +13,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <form id="myform" action="/contact" method="post">
+            <form action="/contact" method="post">
                 <div class="control-group">
                     <div class="input form-group floating-label-form-group controls">
                         <input type="text" class="form-control field" id="name" name="name" placeholder="name" data-error="name!" >
@@ -22,7 +22,7 @@
                 </div>
                 <div class="control-group">
                     <div class="input form-group floating-label-form-group controls">
-                        <input type="text" class="form-control field" id="password" name="password" placeholder="password" data-error="password!" >
+                        <input type="text" class="form-control field" id="email" name="email" placeholder="email" data-error="email!" >
                         <div class="message"></div>
                     </div>
                 </div>

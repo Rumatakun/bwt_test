@@ -19,7 +19,7 @@ return[
     ],
     'contact'=>[
       'controller'=>'feedback',
-      'action'=>'sendfeedback',
+          'action'=>'sendfeedback',
     ],
     'feedbackview'=>[
       'controller'=>'feedback',

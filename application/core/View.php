@@ -29,7 +29,7 @@ namespace application\core;
             echo'no view';
         }     
     }
-    
+
      public static function errorCode($code){
          http_response_code($code);
          $path='application/views/errors/'.$code.'.php';
@@ -43,6 +43,11 @@ namespace application\core;
      public function redirect($url) {
          header('location: '.$url);
          exit;
+     }
+
+
+     public function message($status, $message) {
+         exit(json_encode(['status' => $status, 'message' => $message]));
      }
 
  }

@@ -13,9 +13,8 @@ class FeedbackController extends Controller{
 
         $data=$_POST;
 
-        if(isset($data['do_signup'])){
-            $url='/weather';
-            header('location'.$url);
+        if (!empty($_POST)) {
+            $this->model->sendfeedback();
         }
 
 //        if(!empty($_POST)){

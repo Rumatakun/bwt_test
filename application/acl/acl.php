@@ -1,10 +1,13 @@
 <?php
 return[
+    'all'=>[
+        'login','sendfeedback', 'register','index','showfeedback'
+    ],
     'authorize'=>[
-        'weather',
+        'weatherview',
     ],
     'guest'=>[
-        'login',
+
     ],
     'admin'=>[
         

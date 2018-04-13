@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>Olololo</h1>
+
                     <span class="subheading"></span>
                 </div>
             </div>
@@ -13,11 +13,12 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            //
-            <p><a href="/login">Авторизация</a></p>
+            <div class="">
+            <p ><a href="/login">Авторизация</a></p>
             <p><a href="/singup">Регистрация</a></p>
+            </div>
             <?php if (empty($list)): ?>
-                <p>Список постов пуст</p>
+                <p></p>
             <?php else: ?>
                 <?php foreach ($list as $val): ?>
                     <div class="post-preview">

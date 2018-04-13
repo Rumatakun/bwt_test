@@ -8,19 +8,20 @@ class AccountController extends Controller{
     
     function loginAction()
     {
-        //js message
-//        if(!empty($_POST)){
-//            //exit(json_encode(['status'=>'succes','message'=>123]));
-//        }
 
-            $this->view->render('login');
-
-
-       // echo'login';
-        //$this->registerAction();
+        if ((!empty($_POST))&&($_SERVER['REQUEST_METHOD']=='POST')){
+            if ($this->model->loginValidate($_POST)) {
+                $_SESSION['authorize'] = $_POST['email'];
+//                session_destroy();
+                unset($_POST['email']);
+                unset($_POST['password']);
+            }
+        }
+        $this->view->render('login');
     }
-    
+
     public function registerAction(){
+        //todo $_SERVER['REQUEST_METHOD']=='POST' +почитать
 
         //debug( 'application/views/'.$this->view->path.'.php');
 
@@ -30,9 +31,6 @@ class AccountController extends Controller{
         //echo'signup';
     }
 
-    public function logoutAction() {
-        unset($_SESSION['admin']);
-        $this->view->redirect('admin/login');
-    }
+
 
 }

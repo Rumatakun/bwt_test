@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
-                    <h1>Регистрация</h1>
+
                 </div>
             </div>
         </div>
@@ -46,8 +46,10 @@
                 </div>
                 <div class="control-group">
                     <div class="input form-group floating-label-form-group controls">
-                        <input type="radio" name="gender" id="gender" value="male" name="gender" data-error="gender!"> Male
-                        <input type="radio" name="gender" id="gender" value="female" name="gender" data-error="gender!"> Female
+                        <select name="gender" id="gender" class="form-control field">
+                            <<option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
                         <div class="message"></div>
                     </div>
                 </div>
@@ -57,41 +59,9 @@
                         <div class="message"></div>
                     </div>
                 </div>
-
-<!--                <div class="control-group">-->
-<!--                    <div class="form-group floating-label-form-group controls">-->
-<!--                        <p><input type="text" class="form-control" name="name" placeholder="Имя"  ></p>-->
-<!--                        <div class="message"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="control-group">-->
-<!--                    <div class="form-group floating-label-form-group controls">-->
-<!--                        <p><input type="text" class="form-control" name="surname" placeholder="Фамилия" ></p>-->
-<!--                        <div class="message"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="control-group">-->
-<!--                    <div class="form-group floating-label-form-group controls">-->
-<!--                        <input type="email" id="email" class="inp1 form-control" name="email" placeholder="E-mail" data-error="Email!">-->
-<!--                        <div class="message"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="control-group">-->
-<!--                    <div class="form-group floating-label-form-group controls">-->
-<!--                        <input type="password" class="form-control" name="password" placeholder="password"  data-error="password!">-->
-<!--                        <div class="message"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="control-group">-->
-<!--                    <div class="form-group floating-label-form-group controls">-->
-<!--                        <p><input type="password" class="form-control" name="password2" placeholder="repeat password"  ></p>-->
-<!--                        <div class="message"></div>-->
-<!--                    </div>-->
-<!--                </div>-->
-                <br>
                 <div id="success"></div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-secondary name='do_signup' id="sendMessageButton">Зарегестрироваться</button>
+                    <button type="submit" class="btn btn-secondary" name='do_signup' id="sendMessageButton">Зарегестрироваться</button>
                 </div>
             </form>
         </div>

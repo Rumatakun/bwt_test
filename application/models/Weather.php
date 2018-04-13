@@ -31,7 +31,6 @@ class Weather extends Model {
         $xpath = new DOMXPath($dom);
 
 
-
         $query = "//*[@id='wrow-".$datastring."-03']/td[2]";
         $weather["Night_clouds"]= $xpath->query($query)->item(0)->textContent;
 
