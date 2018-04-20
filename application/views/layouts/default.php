@@ -6,11 +6,11 @@
     <title><?php echo $title; ?></title>
     <link href="/public/styles/bootstrap.css" rel="stylesheet">
     <link href="/public/styles/style.css" rel="stylesheet">
-<!--    <link href="/public/styles/main.css" rel="stylesheet">-->
-<!--    <link href="/public/styles/font-awesome.css" rel="stylesheet">-->
+    <!--    <link href="/public/styles/main.css" rel="stylesheet">-->
+    <!--    <link href="/public/styles/font-awesome.css" rel="stylesheet">-->
     <script src="/public/scripts/jquery.js"></script>
 
-<!--    <script src="/public/scripts/popper.js"></script>-->
+    <!--    <script src="/public/scripts/popper.js"></script>-->
     <script src="/public/scripts/bootstrap.js"></script>
 </head>
 <body>
@@ -42,7 +42,7 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> <br><br><br>
 <?php echo $content; ?>
 <hr>
 <footer>

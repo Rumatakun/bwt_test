@@ -26,7 +26,8 @@ function Validator(settings){
     var rulesPattern ={
         email: /^\w{1,}@\w{1,}\.\w{2,}$/,
         name: /^\w{1,3}$/,
-        password:/^\w{6,$/,
+        birthday: /(^$)|(^\d{,4}\-(0\d|1[012])\-([0-2]\d|3[01])$)/,
+        password:/^\w{1 ,}$/,
     };
     var showError= function(el,msgtype){
         el.parentNode.classList.remove('success');
@@ -155,11 +156,17 @@ function Validator(settings){
     }
     //init here-------------------------------------------
     for(var i=0; i< formsFields.length;i++){
+        if(formsFields[i].id == 'js'){
+            console.log(formsFields[i].value);
+            formsFields[i].value='on';
+            console.log(formsFields[i].value)
+        }
         if(formsFields[i].tagName == 'BUTTON'){
             formsFields[i].addEventListener('click',buttonCheck);
             continue;
         }
         formsFields[i].addEventListener('change',checkIt);
+        console.log(formsFields[i]);
     }
     //
     for(var prop in settings.pattern){
@@ -179,13 +186,12 @@ if($('#myform').length) {
             ],
             'password': [
                 ['notEmpty'],
-                ['contains', 'password', 'password2'],
                ['pattern', 'password']
             ],
             'password2':[
                 ['notEmpty'],
                 ['contains', 'password2', 'password'],
-                ['contains', 'password']
+                //['contains', 'password']
             ],
             'name':[
                 ['notEmpty'],
@@ -193,6 +199,12 @@ if($('#myform').length) {
             'surname':[
                 ['notEmpty'],
             ],
+            'code':[
+                ['notEmpty']
+            ],
+            'birthday':[
+                ['pattern', 'birthday']
+            ]
         },
         errormessage:{
             'emailnotEmpty': 'Обязательный email',
@@ -204,6 +216,8 @@ if($('#myform').length) {
             'password2notEmpty':'повторите пароль',
             'namenotEmpty':'введите имя',
             'surnamenotEmpty':'введите фамилию',
+            'birthdaypattern':'введите в формате yyyy-mm-dd',
+            'codenotEmpty':'введите capcha',
         }
     });
 }
