@@ -30,8 +30,6 @@ class Router
       
     public function match()
     {
-        // todo url to lowercase 301 redirect
-
         $url= trim($_SERVER['REQUEST_URI'],'/');
 
         foreach($this->routes as $route=>$params)
@@ -63,11 +61,9 @@ class Router
            } else{
                View::errorCode(404);
            }
-           
         }
         else{
              View::errorCode(404);
         }
-        
     }
 }

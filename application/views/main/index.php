@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="">
+            <div class="text-center ">
                 <p><a href="/login">Авторизация</a></p>
                 <p><a href="/singup">Регистрация</a></p>
             </div>

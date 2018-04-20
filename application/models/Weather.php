@@ -26,10 +26,7 @@ class Weather extends Model {
         $timeId=@$dom->getElementById('astronomy');
         $time=$timeId->lastChild->textContent;
 
-        //debug($time);
-
         $xpath = new DOMXPath($dom);
-
 
         $query = "//*[@id='wrow-".$datastring."-03']/td[2]";
         $weather["Night_clouds"]= $xpath->query($query)->item(0)->textContent;

@@ -14,9 +14,10 @@ class AccountController extends Controller{
         $errors= array();
 
         if ((!empty($_POST))&&($_SERVER['REQUEST_METHOD']==='POST')){
+            //
             $errors=formValidation($data);
-           if(empty($errors)){
-                if ($this->model->loginValidate($_POST)) { var_dump('valid');
+            if(empty($errors)){
+                if ($this->model->loginValidate($_POST)) {
                     $_SESSION['authorize'] = $_POST['email'];
                     unset($_POST['email']);
                     unset($_POST['password']);
@@ -29,7 +30,6 @@ class AccountController extends Controller{
         }
         $vars=array('data'=>$data,'errors'=>$errors);
         $this->view->render('login',$vars);
-        //var_dump($vars);
     }
 
     public function registerAction(){
@@ -43,19 +43,5 @@ class AccountController extends Controller{
         }
         $vars=array('data'=>$data,'errors'=>$errors);
         $this->view->render('sign up',$vars);
-//
-
-        //echo'signup';
     }
-
-
-    //Функция очистки  данных от HTML и PHP тегов:
-//    function clean($value = "") {
-//        $value = trim($value);
-//        $value = stripslashes($value);
-//        $value = strip_tags($value);
-//        $value = htmlspecialchars($value);
-//
-//        return $value;
-//    }
 }

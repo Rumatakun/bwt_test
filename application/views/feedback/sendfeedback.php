@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
-                    <h1>Напишите мне</h1>
+                    <h1>Send me your feedback</h1>
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="control-group">
                     <div class="input form-group floating-label-form-group controls">
-                        <textarea rows="5" type="text" class="form-control field" id="text" name="message" placeholder="message"><?php echo @$data['message']?></textarea>
+                        <textarea rows="5"  type="text" class="form-control field" style="resize: none;" id="text" name="message" placeholder="message"><?php echo @$data['message']?></textarea>
                         <div class="message"><?php echo @$errors['message']?></div>
                     </div>
                 </div>
@@ -37,12 +37,12 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-secondary" id="sendMessageButton">Отправить</button>
                 </div>
-                <img src="public/scripts/capcha.php" />
+                <img src="public/scripts/capcha.php" id="capcha" />
                 <div class="control-group">
                     <input class="input" class="form-control field" type="text" name="code" id='code' />
                     <div class="message"><?php echo @$errors['code']?></div>
                 </div>
-<!--                <a href="javascript:void(0);" onclick="document.getElementById('code').src='public/scripts/capcha.php?rnd=' + Math.random();">Обновить капчу</a>-->
+                <a href="javascript:void(0);" onclick="document.getElementById('capcha').src='public/scripts/capcha.php?time=' + Math.random();">Обновить капчу</a>
 
             </form>
             <form method="post" >

@@ -47,6 +47,7 @@
                 <div class="control-group">
                     <div class="input form-group floating-label-form-group controls">
                         <select name="gender" id="gender" class="form-control field">
+                            <<option value="male" selected="selected" disabled>Choose your gender</option>
                             <<option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>

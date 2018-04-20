@@ -13,6 +13,7 @@ spl_autoload_register(function($class)
         require $path;
     }
 });
+//init here
 session_start();
 
 $router= new Router;

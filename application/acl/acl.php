@@ -1,10 +1,11 @@
 <?php
+//Access Control List
 return[
     'all'=>[
-        'login','sendfeedback', 'register','index','showfeedback'
+        'login','sendfeedback', 'register','index'
     ],
     'authorize'=>[
-        'weatherview',
+        'weatherview','showfeedback'
     ],
     'guest'=>[
 

@@ -11,7 +11,6 @@ class MainController extends Controller{
          $this->model->getNews();
         $vars=[];
         $this->view->render('mainINdex', $vars);
-        //echo'mainindex';
     }
     
     

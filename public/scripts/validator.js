@@ -25,9 +25,10 @@ function Validator(settings){
     var errors = [];
     var rulesPattern ={
         email: /^\w{1,}@\w{1,}\.\w{2,}$/,
-        name: /^\w{1,3}$/,
+        name: /^\w{1,24}$/,
         birthday: /(^$)|(^\d{,4}\-(0\d|1[012])\-([0-2]\d|3[01])$)/,
-        password:/^\w{1 ,}$/,
+        password:/^\w{6,}$/,
+        message:/^\w{10,500}$/,
     };
     var showError= function(el,msgtype){
         el.parentNode.classList.remove('success');
@@ -68,33 +69,8 @@ function Validator(settings){
                         validationErrorResult = true;
                     }
                 }
-                //------------- yе рабтотет
-                // if(methods[i].length == 3){  var el2=methods[i][2]; //console.log('ConteinsError'); console.log(!validatorMethods[methods[i][0]](el,methods[i][2]));
-                //     if(!validatorMethods[methods[i][0]](el,methods[i][2])){
-                //         if(!errorNotUnique(el,errors,er)){
-                //             errors.push({el:el.id, error:er});
-                //             //errors.push({el:methods[i][2], error:er});
-                //             //---------------
-                //             for(var i=0; i< formsFields.length;i++) {
-                //                 if(formsFields[i].id == el2){console.log(formsFields[i]);
-                //                 showError(formsFields[i],(el2+er)); }
-                //             }
-                //             console.log(el2);
-                //         }
-                //         //---------------
-                //         console.log(errors);
-                //         console.log('ERROR');
-                //         validationErrorResult= false;
-                //     }else{ console.log('NOTERROR');
-                //         errorNotUnique(el,errors,er,'del');
-                //        // errorNotUnique(el2,errors,er,'del');
-                //         console.log(errors);
-                //         validationErrorResult = true;
-                //     }
-                // }
-                //--------------
             }
-        }
+        } console.log(errors);
         // Validation return
         if(errors.length==0){return true;}
         if(validationErrorResult){
@@ -127,7 +103,7 @@ function Validator(settings){
             }
         }
     }
-    //----- НЕ ПАШЕТ, ПЛАВАЮЩИЕ ОШИБКИ ПРИ САБМИТЕ-----------------
+    //
     function buttonCheck(){
         var e = new Event('change');
         if(event){
@@ -138,16 +114,10 @@ function Validator(settings){
                 }
                 var methods = settings.methods[formsFields[i].id];
                 if(!methods){ continue;}
-
-                // triggering input "change" event
-                // for(var j=0; j< methods.length;j++) {
-                //
-                // }
                 formsFields[i].dispatchEvent(e);
                 var cssClassArray = formsFields[i].parentNode.classList.value;
                 var errorClass = cssClassArray.search("error");
                 if(errorClass !== -1){ event.preventDefault();
-                    // console.log("we got error here");
                 }else {
                     // console.log("it's ok");
                 }
@@ -191,7 +161,7 @@ if($('#myform').length) {
             'password2':[
                 ['notEmpty'],
                 ['contains', 'password2', 'password'],
-                //['contains', 'password']
+                ['contains', 'password']
             ],
             'name':[
                 ['notEmpty'],
@@ -204,6 +174,10 @@ if($('#myform').length) {
             ],
             'birthday':[
                 ['pattern', 'birthday']
+            ],
+            'message':[
+                ['notEmpty']
+                ['pattern', 'message']
             ]
         },
         errormessage:{
@@ -218,6 +192,8 @@ if($('#myform').length) {
             'surnamenotEmpty':'введите фамилию',
             'birthdaypattern':'введите в формате yyyy-mm-dd',
             'codenotEmpty':'введите capcha',
+            'messagenotEmpty':'введите сообщение',
+            'messagepattern':'Сообщение должно содержать от 10 до 500 символов',
         }
     });
 }

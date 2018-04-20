@@ -4,10 +4,10 @@ function formValidation($data){
     $errors=array();
     $rulesPattern = [
         'email' => '/^\w{1,}@\w{1,}\.\w{2,}$/',
-        'name' => "/^\w{1,3}$/" ,
-        'password' => "/^\w{1,}$/",
-        'message' => "/^\w{6,}$/",
-        'birthday'=>'/(^$)|(^\d{,4}\-(0\d|1[012])\-([0-2]\d|3[01])$)/',
+        'name' => "/^\w{1,24}$/" ,
+        'password' => "/^\w{6,}$/",
+        'message' => "/^\w{10,500}$/",
+        'birthday'=>'/(^$)|(^\d{4}\-(0\d|1[012])\-([0-2]\d|3[01])$)/',
     ];
     if(isset($data['email'])){
         $email=trim($data['email']);

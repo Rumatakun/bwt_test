@@ -15,13 +15,16 @@ abstract class Controller{
     {
         $db= new Db;
         $this->route=$route;
+        // checking if user has access via acl if not we'll show 403 page
         if(!$this->checkAcl($this->acl,$route['action'])){
             View::errorCode(403);
 
         }
+        //logout action
         if(array_key_exists('logout',$_POST)){
             $this->logout();
         }
+
 
         $this->view= new View($route);
         $this->model=$this->loadModel($route['controller']);
@@ -49,29 +52,6 @@ abstract class Controller{
         return false;
     }
 
-
-//    public function checkAcl($acl,$action){
-//       foreach($acl as $key=>$val)
-//       {
-//            if($key =='authorize'){
-//               if(in_array($action,$val))
-//               {
-//                   if(isset($_SESSION['userid'])){return false;}
-//                   else{return true;}
-//               }
-//            }
-//
-//            if($key =='guest'){
-//               if(in_array($action,$val)){return false; }
-//            }
-//            if($key =='admin'){
-//               if(in_array($action,$val)){return true; }
-//            }
-//           return false;
-//       }
-//    }
-
-
     public function isAcl($key) {
         return in_array($this->route['action'], $this->acl[$key]);
     }
@@ -80,9 +60,4 @@ abstract class Controller{
         unset($_SESSION['authorize']);
         unset($_POST['logout']);
     }
-    /*
-    public function reddirect($url){
-        header('location'.$url);
-        exit;
-    }*/
 }
